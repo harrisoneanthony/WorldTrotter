@@ -7,13 +7,14 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ConversionViewController: UIViewController {
 
     @IBOutlet weak var lblFahrenheit: UILabel!
     @IBOutlet weak var lblCelsius: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print("ConversionViewController loaded its view")
         self.lblFahrenheit.text = "100"
         self.lblCelsius.text = "60"
         
