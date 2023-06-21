@@ -7,15 +7,17 @@
 
 import UIKit
 
-class ConversionViewController: UIViewController {
+class ConversionViewController: UIViewController, UITextFieldDelegate {
 
-    @IBOutlet weak var lblFahrenheit: UILabel!
+    @IBOutlet weak var txtFahrenheit: UITextField!
     @IBOutlet weak var lblCelsius: UILabel!
+    @IBOutlet weak var textField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("ConversionViewController loaded its view")
-        self.lblFahrenheit.text = "100"
+        self.txtFahrenheit.text = ""
+        self.txtFahrenheit.delegate = self
         self.lblCelsius.text = "60"
         
         let gradientLayer = CAGradientLayer()
@@ -24,7 +26,29 @@ class ConversionViewController: UIViewController {
         
         view.layer.insertSublayer(gradientLayer, at: 0)
         }
-
-
+    
+    // functions for fahrenheit and celcius txt
+    @IBAction func fahrenheitFieldEditingChanged(_ textField: UITextField){
+        if let text = textField.text, !text.isEmpty {
+            lblCelsius.text = text
+        } else {
+            lblCelsius.text = "???"
+        }
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.lblCelsius.text = textField.text
+    }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        return true
+    }
+    
+    // function for dismissing keyboard on return
+    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        textField.resignFirstResponder()
+    }
+    
+    
 }
 
