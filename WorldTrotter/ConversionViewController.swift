@@ -30,7 +30,7 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
     }
     
     // add number formatter as a property
-    let nummberFormatter: NumberFormatter = {
+    let numberFormatter: NumberFormatter = {
         let nf = NumberFormatter()
         nf.numberStyle = .decimal
         nf.minimumFractionDigits = 0
@@ -78,7 +78,7 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
     //updating celsius label
     func updateCelciusLabel(){
         if let celsiusValue = celsiusValue {
-            lblCelsius.text = "\(celsiusValue.value)"
+            lblCelsius.text = numberFormatter.string(from: NSNumber(value: celsiusValue.value))
         } else {
             lblCelsius.text = "???"
         }
