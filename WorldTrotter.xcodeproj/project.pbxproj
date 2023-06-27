@@ -298,6 +298,7 @@
 				DEVELOPMENT_TEAM = 3VVT576UZN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WorldTrotter/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need access to your location to provide accurate weather forecasts near you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -326,6 +327,7 @@
 				DEVELOPMENT_TEAM = 3VVT576UZN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WorldTrotter/Info.plist;
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We need access to your location to provide accurate weather forecasts near you.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
