@@ -51,6 +51,7 @@
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
                                     <action selector="fahrenheitFieldEditingChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="mND-DP-wEG"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="1ti-Q8-hUW"/>
                                 </connections>
                             </textField>
                         </subviews>

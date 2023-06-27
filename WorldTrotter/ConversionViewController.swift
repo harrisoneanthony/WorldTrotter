@@ -84,5 +84,26 @@ class ConversionViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    //using a delegate
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let allowedCharacterSet = CharacterSet(charactersIn: "0123456789.")
+        let replacementCharacterSet = CharacterSet(charactersIn: string)
+        
+        let existingTextHasDecimalSeparator = textField.text?.range(of: ".")
+        let replacementTextHasDecimalSeparator = string.range(of: ".")
+        
+        // Check for decimal separator
+        if existingTextHasDecimalSeparator != nil,
+            replacementTextHasDecimalSeparator != nil {
+            return false
+        }
+        // Check for allowed characters
+        if !allowedCharacterSet.isSuperset(of: replacementCharacterSet) {
+            return false
+        }
+        return true
+    }
+
+    
 }
 
