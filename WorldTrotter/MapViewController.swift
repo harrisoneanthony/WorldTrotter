@@ -7,8 +7,20 @@
 
 import UIKit
 import CoreLocation
+import MapKit
 
 class MapViewController: UIViewController {
+    
+    @IBOutlet weak var mapView: MKMapView!
+    @IBAction func zoomInButtonTapped(_ sender: UIButton) {
+        zoomIn()
+    }
+
+    @IBAction func zoomOutButtonTapped(_ sender: UIButton) {
+        zoomOut()
+    }
+
+
  
     let locationManager = CLLocationManager()
     
@@ -25,8 +37,27 @@ class MapViewController: UIViewController {
         // Start location updates
         locationManager.startUpdatingLocation()
         
+        func myRegion() {
+            
+        }
+        
         
     }
+    
+    func zoomIn() {
+        var region = mapView.region
+        region.span.latitudeDelta /= 2.0
+        region.span.longitudeDelta /= 2.0
+        mapView.setRegion(region, animated: true)
+    }
+
+    func zoomOut() {
+        var region = mapView.region
+        region.span.latitudeDelta *= 2.0
+        region.span.longitudeDelta *= 2.0
+        mapView.setRegion(region, animated: true)
+    }
+
 }
 
 extension MapViewController: CLLocationManagerDelegate {
@@ -41,6 +72,9 @@ extension MapViewController: CLLocationManagerDelegate {
             
             // Do something with the latitude and longitude values
             print("Latitude: \(latitude), Longitude: \(longitude)")
+            
+            let coordinateRegion = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 1000, longitudinalMeters: 1000)
+                    mapView.setRegion(coordinateRegion, animated: true)
         }
     }
     

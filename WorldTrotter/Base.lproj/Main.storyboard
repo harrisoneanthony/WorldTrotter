@@ -128,15 +128,43 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="wRL-Q2-sNw">
+                                <rect key="frame" x="306" y="104.99999999999999" width="49.666666666666686" height="128.66666666666663"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IB1-mW-4Ir">
+                                        <rect key="frame" x="0.0" y="0.0" width="49.666666666666664" height="34.333333333333336"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="plus.magnifyingglass" catalog="system"/>
+                                        <connections>
+                                            <action selector="zoomInButtonTapped:" destination="75M-tU-spk" eventType="touchUpInside" id="kPZ-sB-47j"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYK-wO-nN6">
+                                        <rect key="frame" x="0.0" y="94.333333333333343" width="49.666666666666664" height="34.333333333333343"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="minus.magnifyingglass" catalog="system"/>
+                                        <connections>
+                                            <action selector="zoomOutButtonTapped:" destination="75M-tU-spk" eventType="touchUpInside" id="llZ-pd-xdC"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fxt-Sz-6Eu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="wRL-Q2-sNw" firstAttribute="top" secondItem="fxt-Sz-6Eu" secondAttribute="top" constant="46" id="89x-gy-VDf"/>
+                            <constraint firstItem="fxt-Sz-6Eu" firstAttribute="trailing" secondItem="wRL-Q2-sNw" secondAttribute="trailing" constant="37.329999999999998" id="RhG-E4-JuV"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="MapIcon" id="p2k-c5-cbS"/>
+                    <connections>
+                        <outlet property="mapView" destination="tOq-Mb-z1s" id="Vnm-Oi-9UN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rSH-zy-Tm7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1708" y="-330"/>
+            <point key="canvasLocation" x="1707.6335877862596" y="-330.28169014084511"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="0kg-9t-ggj">
@@ -162,6 +190,8 @@
         <image name="ConvertIcon" width="48.333332061767578" height="32.333332061767578"/>
         <image name="MapIcon" width="48.333332061767578" height="32.333332061767578"/>
         <image name="house.fill" catalog="system" width="128" height="104"/>
+        <image name="minus.magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="plus.magnifyingglass" catalog="system" width="128" height="117"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
